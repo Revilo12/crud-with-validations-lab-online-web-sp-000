@@ -4,6 +4,7 @@ class SongsController < ApplicationController
   end
 
   def show
+    set_song
   end
 
   private
