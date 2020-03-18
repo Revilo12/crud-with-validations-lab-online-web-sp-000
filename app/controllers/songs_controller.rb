@@ -5,4 +5,9 @@ class SongsController < ApplicationController
 
   def show
   end
+
+  private
+  def set_song
+    @song = Song.find(params[:id])
+  end
 end
