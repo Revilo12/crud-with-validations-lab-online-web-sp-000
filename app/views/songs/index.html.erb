@@ -1,7 +1,7 @@
 <table>
 <%= @songs.each do |song| %>
   <tr>
-    <td><%= song.name %></td>
+    <td><%= song.title %></td>
     <td><%= song.released ? "Released" : "Not Released" %></td>
     <td><%= song.released ? song.release_year.to_s : "No Release Date" %></td>
     <td><%= song.artist_name %></td>
