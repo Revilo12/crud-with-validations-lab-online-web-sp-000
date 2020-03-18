@@ -11,6 +11,16 @@ class SongsController < ApplicationController
     @song = Song.new
   end
 
+  def create
+    @song = Song.new(set_params)
+    if @song.valid?
+      @song.save
+      song_redirect
+    else
+      render :new
+    end
+  end
+
   def edit
     set_song
   end
@@ -23,10 +33,6 @@ class SongsController < ApplicationController
     else
       render :edit
     end
-  end
-
-  def create
-
   end
 
   private
