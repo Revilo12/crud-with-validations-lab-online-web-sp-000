@@ -5,9 +5,11 @@ class TitleValidator < ActiveModel::Validator
     end
   end
 
-  def matching_songs(title)
+  def matching_songs(title, artist, release_year)
     Song.all.select do |song|
       song.title == title
+      song.artist == artist
+      song.release_year == release_year
     end
   end
 end
