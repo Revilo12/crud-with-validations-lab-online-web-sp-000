@@ -19,7 +19,11 @@ class SongsController < ApplicationController
     set_song
     @song.update(set_params)
     if song.valid?
-      redirect_to song_path(@song)
+      song_redirect
+    else
+      render :edit
+    end
+  end
 
   def create
 
