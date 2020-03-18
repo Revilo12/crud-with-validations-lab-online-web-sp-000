@@ -1,5 +1,6 @@
 class TitleValidator < ActiveModel::Validator
   def validate(record)
+    binding.pry
     unless matching_songs(record).length > 1
       record.errors[:title] << "Artist already has song of that title for this year"
     end
